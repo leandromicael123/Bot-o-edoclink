@@ -21,6 +21,9 @@ export class AppComponent {
   @ViewChild('voiceAssistant')
   private voiceAssistant?: SpeechRecognitionComponent;
 
+  @ViewChild('chatAssistant')
+  private chatAssistant?: ChatAssistantComponent;
+
   private readonly greeting: ChatMessage = {
     role: 'assistant',
     text: 'Olá, sou o Assistente Link. Como posso ajudar?',
@@ -38,6 +41,18 @@ export class AppComponent {
     if (!message) return;
 
     this.messages = [...this.messages, { role: 'user', text: message }];
+    this.chatAssistant?.open();
+
+    window.setTimeout(() => {
+      this.messages = [
+        ...this.messages,
+        { role: 'assistant', text: this.createAssistantReply(message) },
+      ];
+    }, 550);
+  }
+
+  openChatbot(): void {
+    this.chatAssistant?.open();
   }
 
   clearConversation(): void {
@@ -51,5 +66,23 @@ export class AppComponent {
     event.preventDefault();
     event.stopPropagation();
     this.voiceAssistant?.openAndStart();
+  }
+
+  private createAssistantReply(message: string): string {
+    const normalized = message.toLocaleLowerCase('pt-PT');
+
+    if (normalized.includes('dashboard') || normalized.includes('painel')) {
+      return 'O painel reúne documentos, pastas, tarefas, contadores e gráficos. Qual destes elementos pretende consultar?';
+    }
+
+    if (normalized.includes('documento') || normalized.includes('processo')) {
+      return 'Posso ajudar a pesquisar um documento. Indique um código, assunto, autor ou intervalo de datas.';
+    }
+
+    if (normalized.includes('resum')) {
+      return 'Posso preparar um resumo. Indique o conteúdo que pretende sintetizar.';
+    }
+
+    return `Recebi a sua mensagem: “${message}”. A ligação ao serviço de IA pode ser adicionada neste ponto de integração.`;
   }
 }
