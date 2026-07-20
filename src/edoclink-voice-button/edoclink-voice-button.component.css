@@ -2,6 +2,24 @@
   display: block;
 }
 
+:host(.top-voice-button) {
+  width: 37px;
+  height: 37px;
+}
+
+:host(.top-voice-button) button {
+  color: #0b4b54;
+  background: #e7edf1;
+  border-color: #e7edf1;
+  border-radius: 4px;
+}
+
+:host(.top-voice-button) button:hover,
+:host(.top-voice-button) button:focus-visible {
+  color: #ffffff;
+  background: #006f7d;
+}
+
 button {
   display: grid;
   width: 100%;
