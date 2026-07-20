@@ -8,17 +8,17 @@ button {
   height: 100%;
   place-items: center;
   padding: 0;
-  color: #173d46;
-  background: #dce9ee;
-  border: 1px solid #dce9ee;
-  border-radius: 3px;
+  color: #ffffff;
+  background: #028192;
+  border: 1px solid #028192;
+  border-radius: 50%;
   cursor: pointer;
 }
 
 button:hover,
 button:focus-visible {
   color: #ffffff;
-  background: #087f8d;
+  background: #006f7d;
   outline: 2px solid #ffffff;
   outline-offset: 1px;
 }
