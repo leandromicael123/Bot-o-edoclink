@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, ViewChild } from '@angular/core';
 import {
   ChatAssistantComponent,
   ChatMessage,
@@ -18,6 +18,9 @@ import { SpeechRecognitionComponent } from './speech-recognition/speech-recognit
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+  @ViewChild('voiceAssistant')
+  private voiceAssistant?: SpeechRecognitionComponent;
+
   private readonly greeting: ChatMessage = {
     role: 'assistant',
     text: 'Olá, sou o Assistente Link. Como posso ajudar?',
@@ -39,5 +42,14 @@ export class AppComponent {
 
   clearConversation(): void {
     this.messages = [{ ...this.greeting }];
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  openVoiceWithShortcut(event: KeyboardEvent): void {
+    if (!event.altKey || event.code !== 'KeyA' || event.repeat) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+    this.voiceAssistant?.openAndStart();
   }
 }
