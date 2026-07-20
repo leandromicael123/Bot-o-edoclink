@@ -2,7 +2,7 @@
   <header class="topbar">
     <button class="mobile-menu" type="button" aria-label="Abrir menu">☰</button>
     <a class="edoclink-brand" href="#" aria-label="edoclink — início">
-      <img src="images/link-assistant-logo.png" alt="" />
+      <img src="/images/link-assistant-logo.png" alt="" />
       <strong>edoclink</strong>
     </a>
 
@@ -22,7 +22,14 @@
 
     <div class="topbar-actions">
       <button type="button" title="Caixa de transferência">▣</button>
-      <button type="button" title="Assistente de IA" (click)="openChatbot()">♙</button>
+      <edoclink-button
+        class="top-voice-button"
+        title="Iniciar voz (Alt+A)"
+        (pressed)="voiceAssistant.openAndStart()"
+      ></edoclink-button>
+      <button class="top-chat-button" type="button" title="Assistente de IA" (click)="openChatbot()" aria-label="Abrir Assistente de IA">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H8l-4 4V4Zm3 4h10v2H7V8Zm0 4h7v2H7v-2Z" /></svg>
+      </button>
       <button class="notification" type="button" title="Notificações"><i>807</i>♢</button>
       <button class="environment" type="button">EDOC_BASE</button>
       <button class="avatar" type="button">FS</button>
