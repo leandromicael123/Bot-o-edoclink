@@ -1,0 +1,28 @@
+<main class="page">
+  <section class="edoclink-screen" aria-label="Demonstração do edoclink">
+    <img
+      class="edoclink-screen__background"
+      src="https://i.ibb.co/KjJxVZcm/Captura-de-ecr-2026-07-20-105741.png"
+      alt="Interface do edoclink"
+    />
+
+    <edoclink-button
+      class="toolbar-voice-button"
+      title="Assistente de voz"
+      (pressed)="voiceAssistant.openAndStart()"
+    ></edoclink-button>
+
+    <app-chat-assistant
+      class="chat-position"
+      [messages]="messages"
+      (messageSubmitted)="addMessage($event)"
+      (voiceRequested)="voiceAssistant.openAndStart()"
+      (clearRequested)="clearConversation()"
+    ></app-chat-assistant>
+  </section>
+
+  <app-speech-recognition
+    #voiceAssistant
+    (messageSent)="addMessage($event)"
+  ></app-speech-recognition>
+</main>

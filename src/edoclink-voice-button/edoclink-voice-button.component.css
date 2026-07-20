@@ -1,0 +1,31 @@
+:host {
+  display: block;
+}
+
+button {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  padding: 0;
+  color: #173d46;
+  background: #dce9ee;
+  border: 1px solid #dce9ee;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus-visible {
+  color: #ffffff;
+  background: #087f8d;
+  outline: 2px solid #ffffff;
+  outline-offset: 1px;
+}
+
+svg {
+  width: 48%;
+  height: 48%;
+  fill: currentColor;
+  pointer-events: none;
+}

@@ -1,0 +1,121 @@
+<div *ngIf="visible" class="voice-backdrop" role="presentation">
+  <section
+    class="assistant"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="assistant-title"
+  >
+    <header class="assistant__header">
+      <div class="assistant__brand">
+        <img src="https://i.ibb.co/chJpphV3/link-assistant-logo.png" alt="" />
+        <h1 id="assistant-title">Assistente Link</h1>
+      </div>
+
+      <button
+        class="icon-button"
+        type="button"
+        aria-label="Fechar e cancelar gravação"
+        (click)="cancel()"
+      >
+        &times;
+      </button>
+    </header>
+
+    <ng-container *ngIf="state !== 'idle'; else idleContent">
+      <h2 class="status" [class.status--paused]="isPaused">
+        {{ isListening ? 'A ouvir…' : 'Em pausa' }}
+      </h2>
+
+      <div
+        class="waveform"
+        [class.waveform--active]="isListening"
+        [class.waveform--paused]="isPaused"
+        aria-hidden="true"
+      >
+        <span
+          *ngFor="let bar of waveformBars; let index = index"
+          [style.--bar-index]="index"
+        ></span>
+      </div>
+
+      <p class="transcription-label">Transcrição</p>
+
+      <div class="transcription" aria-live="polite">
+        <span class="transcription__final">{{ finalTranscript }}</span>
+        <span class="transcription__interim">{{ interimTranscript }}</span>
+        <span *ngIf="!transcript" class="transcription__placeholder">
+          Começa a falar…
+        </span>
+      </div>
+
+      <p *ngIf="isListening" class="automatic-send">
+        A mensagem será enviada automaticamente quando parares de falar.
+      </p>
+
+      <div class="actions">
+        <ng-container *ngIf="isListening">
+          <button class="button button--pause" type="button" (click)="pause()">
+            <span aria-hidden="true">Ⅱ</span>
+            Pausar
+          </button>
+
+          <button
+            class="button button--cancel"
+            type="button"
+            (click)="cancel()"
+          >
+            <span aria-hidden="true">■</span>
+            Cancelar
+          </button>
+        </ng-container>
+
+        <ng-container *ngIf="isPaused">
+          <button
+            class="button button--send"
+            type="button"
+            [disabled]="!transcript"
+            (click)="send()"
+          >
+            <span aria-hidden="true">➤</span>
+            Enviar
+          </button>
+
+          <button
+            class="button button--resume"
+            type="button"
+            (click)="resume()"
+          >
+            <span aria-hidden="true">▶</span>
+            Retomar
+          </button>
+
+          <button
+            class="button button--cancel"
+            type="button"
+            (click)="cancel()"
+          >
+            <span aria-hidden="true">■</span>
+            Cancelar
+          </button>
+        </ng-container>
+      </div>
+    </ng-container>
+
+    <ng-template #idleContent>
+      <div class="idle">
+        <p *ngIf="errorMessage" class="error" role="alert">
+          {{ errorMessage }}
+        </p>
+
+        <button
+          class="button button--start"
+          type="button"
+          [disabled]="unsupported"
+          (click)="start()"
+        >
+          Tentar novamente
+        </button>
+      </div>
+    </ng-template>
+  </section>
+</div>
