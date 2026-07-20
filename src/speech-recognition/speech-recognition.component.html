@@ -3,7 +3,7 @@
     <header class="assistant__header">
       <div class="assistant__brand">
         <img
-          src="../images/link-assistant-logo.png"
+          src="/images/link-assistant-logo.png"
           alt=""
         />
         <h1 id="assistant-title">Assistente Link</h1>
@@ -21,7 +21,7 @@
 
     <ng-container *ngIf="state !== 'idle'; else idleContent">
       <h2 class="status" [class.status--paused]="isPaused">
-        {{ isListening ? 'A ouvir…' : 'Em pausa' }}
+        {{ isListening ? 'A ouvir...' : 'Em pausa' }}
       </h2>
 
       <div
@@ -70,7 +70,7 @@
             [disabled]="!transcript"
             (click)="send()"
           >
-            <span aria-hidden="true">➤</span>
+            <span aria-hidden="true">✓</span>
             Enviar
           </button>
 

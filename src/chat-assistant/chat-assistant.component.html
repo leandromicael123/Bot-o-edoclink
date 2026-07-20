@@ -1,8 +1,8 @@
-<section *ngIf="!closed; else closedChat" class="chat" aria-labelledby="chat-title">
+<section *ngIf="!closed" class="chat" aria-labelledby="chat-title">
   <header class="chat__header">
     <div class="chat__brand">
       <img
-        src="../images/link-assistant-logo.png"
+        src="/images/link-assistant-logo.png"
         alt=""
       />
       <h1 id="chat-title">Assistente Link</h1>
@@ -24,7 +24,7 @@
       title="Limpar conversa"
       (click)="clearRequested.emit()"
     >
-      ♲
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7h8l-.6 12H8.6L8 7Zm2-3h4l1 1h4v2H5V5h4l1-1Z" /></svg>
     </button>
 
     <article
@@ -39,7 +39,7 @@
   <form class="composer" (ngSubmit)="submit()">
     <textarea
       name="message"
-      rows="2"
+      rows="1"
       [(ngModel)]="draft"
       placeholder="Escreva uma mensagem..."
       aria-label="Mensagem"
@@ -91,15 +91,3 @@
     </p>
   </form>
 </section>
-
-<ng-template #closedChat>
-  <div class="closed-chat">
-    <button type="button" aria-label="Abrir Assistente Link" (click)="reopen()">
-      <img
-        src="https://i.ibb.co/chJpphV3/link-assistant-logo.png"
-        alt=""
-      />
-      Abrir Assistente Link
-    </button>
-  </div>
-</ng-template>

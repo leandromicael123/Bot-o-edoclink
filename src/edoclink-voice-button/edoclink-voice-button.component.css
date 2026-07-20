@@ -2,23 +2,41 @@
   display: block;
 }
 
+:host(.top-voice-button) {
+  width: 37px;
+  height: 37px;
+}
+
+:host(.top-voice-button) button {
+  color: #0b4b54;
+  background: #e7edf1;
+  border-color: #e7edf1;
+  border-radius: 4px;
+}
+
+:host(.top-voice-button) button:hover,
+:host(.top-voice-button) button:focus-visible {
+  color: #ffffff;
+  background: #006f7d;
+}
+
 button {
   display: grid;
   width: 100%;
   height: 100%;
   place-items: center;
   padding: 0;
-  color: #173d46;
-  background: #dce9ee;
-  border: 1px solid #dce9ee;
-  border-radius: 3px;
+  color: #ffffff;
+  background: #028192;
+  border: 1px solid #028192;
+  border-radius: 50%;
   cursor: pointer;
 }
 
 button:hover,
 button:focus-visible {
   color: #ffffff;
-  background: #087f8d;
+  background: #006f7d;
   outline: 2px solid #ffffff;
   outline-offset: 1px;
 }
