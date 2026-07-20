@@ -150,6 +150,12 @@ a {
   cursor: pointer;
 }
 
+.top-chat-button svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
 .topbar-actions .notification i {
   position: absolute;
   right: -6px;
@@ -494,7 +500,7 @@ table input { width: 17px; height: 17px; accent-color: var(--teal); }
   .mobile-menu { display: block; }
   .edoclink-brand { width: 55px; }
   .panel-selector { width: min(205px, 36vw); }
-  .global-search, .topbar-actions button:first-child, .topbar-actions button:nth-child(2), .notification { display: none !important; }
+  .global-search, .topbar-actions > button:first-child, .notification { display: none !important; }
   .sidebar { display: none; }
   .dashboard-grid { min-width: 0; min-height: max-content; height: auto; display: flex; flex-direction: column; }
   .widget { min-height: 260px; }
