@@ -87,12 +87,9 @@
   border-radius: 999px;
   background: #ff8127;
   transform-origin: center;
-  transform: scaleY(0.2);
-}
-
-.waveform--active span {
-  animation: voice-bar 0.75s ease-in-out infinite alternate;
-  animation-delay: calc(var(--bar-index) * -35ms);
+  transform: scaleY(0.1);
+  transition: transform 70ms linear;
+  will-change: transform;
 }
 
 .waveform--paused {
@@ -198,16 +195,6 @@
   margin: 16px 0 0;
   color: #a40000;
   font-weight: 700;
-}
-
-@keyframes voice-bar {
-  from {
-    transform: scaleY(0.2);
-  }
-
-  to {
-    transform: scaleY(1);
-  }
 }
 
 @media (max-width: 580px) {
