@@ -29,7 +29,7 @@ export class ChatAssistantComponent {
   draft = '';
   attachmentName = '';
   expanded = false;
-  closed = false;
+  closed = true;
 
   @HostBinding('class.is-expanded')
   get isExpanded(): boolean {
@@ -59,6 +59,10 @@ export class ChatAssistantComponent {
   }
 
   reopen(): void {
+    this.closed = false;
+  }
+
+  open(): void {
     this.closed = false;
   }
 
