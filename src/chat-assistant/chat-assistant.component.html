@@ -1,8 +1,8 @@
-<section *ngIf="!closed; else closedChat" class="chat" aria-labelledby="chat-title">
+<section *ngIf="!closed" class="chat" aria-labelledby="chat-title">
   <header class="chat__header">
     <div class="chat__brand">
       <img
-        src="../images/link-assistant-logo.png"
+        src="images/link-assistant-logo.png"
         alt=""
       />
       <h1 id="chat-title">Assistente Link</h1>
@@ -91,15 +91,3 @@
     </p>
   </form>
 </section>
-
-<ng-template #closedChat>
-  <div class="closed-chat">
-    <button type="button" aria-label="Abrir Assistente Link" (click)="reopen()">
-      <img
-        src="https://i.ibb.co/chJpphV3/link-assistant-logo.png"
-        alt=""
-      />
-      Abrir Assistente Link
-    </button>
-  </div>
-</ng-template>

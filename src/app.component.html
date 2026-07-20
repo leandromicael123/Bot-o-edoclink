@@ -1,25 +1,146 @@
-<main class="page">
-  <section class="edoclink-screen" aria-label="Demonstração do edoclink">
-    <img
-      class="edoclink-screen__background"
-      src="images/background.png"
-      alt="Interface do edoclink"
-    />
+<main class="app-shell">
+  <header class="topbar">
+    <button class="mobile-menu" type="button" aria-label="Abrir menu">☰</button>
+    <a class="edoclink-brand" href="#" aria-label="edoclink — início">
+      <img src="images/link-assistant-logo.png" alt="" />
+      <strong>edoclink</strong>
+    </a>
 
+    <button class="panel-selector" type="button">
+      <small>Painel</small>
+      <span>◉ DASHBOARD_FS</span>
+      <b>▾</b>
+    </button>
+
+    <span class="topbar-spacer"></span>
+
+    <label class="global-search">
+      <input type="search" placeholder="Pesquisar" aria-label="Pesquisar" />
+      <span aria-hidden="true">⌕</span>
+      <span aria-hidden="true">◎</span>
+    </label>
+
+    <div class="topbar-actions">
+      <button type="button" title="Caixa de transferência">▣</button>
+      <button type="button" title="Assistente de IA" (click)="openChatbot()">♙</button>
+      <button class="notification" type="button" title="Notificações"><i>807</i>♢</button>
+      <button class="environment" type="button">EDOC_BASE</button>
+      <button class="avatar" type="button">FS</button>
+    </div>
+  </header>
+
+  <div class="workspace">
+    <aside class="sidebar" aria-label="Navegação principal">
+      <nav>
+        <a class="nav-item active" href="#"><span>⌂</span><b>Início</b></a>
+        <a class="nav-item" href="#"><span>▣</span><b>Meu Trabalho</b><i>⌄</i></a>
+        <a class="nav-item" href="#"><span>＋</span><b>Criar</b><i>⌄</i></a>
+        <a class="nav-item" href="#"><span>⌕</span><b>Pesquisar</b><i>⌄</i></a>
+        <a class="nav-item" href="#"><span>⊕</span><b>Pesquisa Avançada</b><i>⌄</i></a>
+        <a class="nav-item" href="#"><span>▦</span><b>Entidades</b><i>⌄</i></a>
+        <a class="nav-item" href="#"><span>▤</span><b>Autos</b><i>⌄</i></a>
+        <a class="nav-item" href="#"><span>♙</span><b>Pessoal</b><i>⌄</i></a>
+        <a class="nav-item" href="#"><span>⚙</span><b>Geral</b><i>⌄</i></a>
+        <a class="nav-item" href="#"><span>♧</span><b>Gestão de Reuniões</b><i>⌄</i></a>
+        <a class="nav-item" href="#"><span>♟</span><b>Módulos</b><i>⌄</i></a>
+      </nav>
+      <footer><button type="button">☷ <span>Minimizar</span></button><button type="button">⚙</button></footer>
+    </aside>
+
+    <section class="dashboard" aria-label="Painel DASHBOARD_FS">
+      <div class="dashboard-grid">
+        <article class="widget html-widget">
+          <header><span>Ｔ</span> NEW HTML CONTENT</header>
+          <div class="html-preview">
+            <strong>Não ALTERAR sff!</strong>
+            <i class="orange-line short"></i><i class="orange-line medium"></i><i class="orange-line long"></i>
+          </div>
+        </article>
+
+        <article class="widget tasks-widget">
+          <header><span>▣</span> NOVA LISTA DE TAREFAS</header>
+          <div class="task-list">
+            <section><a href="#">TIPO_DIST_FS_RAPIDA/2026/27</a><i class="dot coral"></i><small>│ Fernando Silva (2026/07/17 – 01:38:31)</small><b>Task 66877: FE-EXT-05 - Suporte em avaliação de regras</b><p>segue</p></section>
+            <section><a href="#">TIPO_DIST_FS_RAPIDA/2026/21</a><i class="dot brown"></i><small>│ Fernando Silva (2026/05/07 – 17:07:01)</small><b>Task 66665: Associar antecedente/subsequente a flux...</b><p>Segue</p></section>
+            <section><a href="#">TIPO_DIST_FS_RAPIDA/2026/25</a><i class="dot blue"></i><small>│ Alexandre Frazão (2026/05/22 – 18:38:33)</small><b>Task 66665: Associar antecedente/subsequente a flux...</b><p>siga</p></section>
+            <section><a href="#">TIPO_DIST_FS_RAPIDA/2026/24</a><i class="dot outline"></i><small>│ Alexandre Frazão (2026/05/25 – 15:41:56)</small><b>[SUBSEQUENTE] Task 66665: Associar antecedente/su...</b><p>cá vai disto</p></section>
+          </div>
+        </article>
+
+        <article class="widget documents-widget">
+          <header><span>☷</span> DOCUMENTOS FS</header>
+          <div class="widget-toolbar"><button class="selected">▼</button><button>▧</button><button>ⓧ</button><button><small>PDF</small></button></div>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th><input type="checkbox" /></th><th>IND.</th><th>AUTOR</th><th>TIPO DE DOCUMENT...</th><th>CÓDIGO</th><th>FAVORITO</th><th>ASSUNTO</th></tr></thead>
+              <tbody>
+                <tr><td><input type="checkbox" /></td><td><i class="nok">NOK</i></td><td>Fernando Sil...</td><td>TDOC_FS_C</td><td><a href="#">TDOC_FS_C/2026/- (edocdev)</a></td><td>☆</td><td></td></tr>
+                <tr><td><input type="checkbox" /></td><td><i class="nok">NOK</i></td><td>Fernando Sil...</td><td>TDOC_FS_C</td><td><a href="#">TDOC_FS_C/2026/- (edocdev)</a></td><td>☆</td><td></td></tr>
+                <tr><td><input type="checkbox" /></td><td><i class="nok">NOK</i></td><td>Fernando Sil...</td><td>TDOC_FS_C</td><td><a href="#">TDOC_FS_C/2026/- (edocdev)</a></td><td>☆</td><td></td></tr>
+                <tr><td><input type="checkbox" /></td><td><i class="nok">NOK</i></td><td>Fernando Sil...</td><td>TDOC_FS_C</td><td><a href="#">TDOC_FS_C/2026/- (edocdev)</a></td><td>☆</td><td></td></tr>
+                <tr><td><input type="checkbox" /></td><td><i class="nok">NOK</i></td><td>Fernando Sil...</td><td>TDOC_FS_C</td><td><a href="#">TDOC_FS_C/2026/- (edocdev)</a></td><td>☆</td><td></td></tr>
+                <tr><td><input type="checkbox" /></td><td><i class="nok">NOK</i></td><td>Fernando Sil...</td><td>TDOC_FS_C</td><td><a href="#">TDOC_FS_C/2026/- (edocdev)</a></td><td>☆</td><td></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <footer class="table-footer"><span>100　⌄</span><b>Itens por página</b><i>Itens 1 a 73 de 73</i></footer>
+        </article>
+
+        <article class="widget folders-widget">
+          <header><span>☷</span> PASTAS FS</header>
+          <div class="widget-toolbar split"><div><button class="selected">▼</button><button>▧</button><button>ⓧ</button><button><small>PDF</small></button></div><div><button class="filter-text">Filtrar</button><button>↶</button></div></div>
+          <div class="table-scroll">
+            <table class="folders-table">
+              <thead><tr><th><input type="checkbox" /></th><th>CÓDIGO ↓</th><th>FAVORITO</th><th>TIPO</th><th>ASSUNTO</th></tr></thead>
+              <tbody>
+                <tr><td><input type="checkbox" /></td><td><a href="#">classFSP_0/2026/3</a></td><td>☆</td><td></td><td></td></tr>
+                <tr><td><input type="checkbox" /></td><td><a href="#">classFSP_0/2026/2</a></td><td>☆</td><td></td><td></td></tr>
+                <tr><td><input type="checkbox" /></td><td><a href="#">classFSP_0/2026/1</a></td><td>☆</td><td></td><td></td></tr>
+                <tr><td><input type="checkbox" /></td><td><a href="#">classFSP_0/2026/-</a></td><td>☆</td><td></td><td></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="widget counter-five"><header><span>#</span> NEW COUNTER</header><div class="counter"><span>▱</span><b>5</b></div></article>
+        <article class="widget no-data"><header><span>◔</span> DOCUMENTOS POR CONTRIBU...</header><div>No data available</div></article>
+        <article class="widget counter-seventy"><header><span>#</span> TDOC_FS_C_2026</header><div class="counter"><span>▱</span><b>73</b></div></article>
+
+        <article class="widget donut-widget">
+          <header><span>◯</span> DOCUMENTOS POR CÓDIGO</header>
+          <div class="donut-body"><div class="donut"><span>5</span></div><p><i></i>[Sem valor]　<i></i>Documento</p></div>
+        </article>
+
+        <article class="widget bars-widget">
+          <header><span>▤</span> NOVO GRÁFICO</header>
+          <div class="bar-chart"><p><span>def</span><i class="bar coral-bar"></i></p><p><span>abc</span><i class="bar purple-bar"></i></p><p><span></span><i class="bar blue-bar"></i></p><p><span></span><i class="bar orange-bar"></i></p><p><span></span><i class="bar green-bar"></i></p></div>
+        </article>
+
+        <article class="widget small-list-widget">
+          <header><span>☷</span> NOVA LISTA</header>
+          <div class="widget-toolbar"><button>▼</button><button>▧</button><button>ⓧ</button><button><small>PDF</small></button></div>
+          <div class="mini-table"><input type="checkbox" /> DATA LIMITE DO PRAZO ↑</div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <div class="assistant-launchers">
+    <button class="chat-launcher" type="button" (click)="openChatbot()"><span>▱</span> Falar com o chatbot</button>
     <edoclink-button
-      class="toolbar-voice-button"
+      class="voice-launcher"
       title="Assistente de voz (Alt+A)"
       (pressed)="voiceAssistant.openAndStart()"
     ></edoclink-button>
+  </div>
 
-    <app-chat-assistant
-      class="chat-position"
-      [messages]="messages"
-      (messageSubmitted)="addMessage($event)"
-      (voiceRequested)="voiceAssistant.openAndStart()"
-      (clearRequested)="clearConversation()"
-    ></app-chat-assistant>
-  </section>
+  <app-chat-assistant
+    #chatAssistant
+    [messages]="messages"
+    (messageSubmitted)="addMessage($event)"
+    (voiceRequested)="voiceAssistant.openAndStart()"
+    (clearRequested)="clearConversation()"
+  ></app-chat-assistant>
 
   <app-speech-recognition
     #voiceAssistant

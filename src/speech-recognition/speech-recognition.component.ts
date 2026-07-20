@@ -170,7 +170,7 @@ export class SpeechRecognitionComponent implements OnInit, OnDestroy {
     this.restartAfterEnd = false;
     this.automaticSendRequested = false;
     this.clearTimers();
-    this.stopMicrophoneVisualization();
+    this.stopMicrophoneVisualization(true);
 
     if (this.recognitionActive) {
       this.recognition.stop();
@@ -481,7 +481,7 @@ export class SpeechRecognitionComponent implements OnInit, OnDestroy {
     );
   }
 
-  private stopMicrophoneVisualization(): void {
+  private stopMicrophoneVisualization(preserveLevels = false): void {
     this.visualizationToken++;
 
     if (this.animationFrameId !== undefined) {
@@ -499,7 +499,9 @@ export class SpeechRecognitionComponent implements OnInit, OnDestroy {
     }
 
     this.audioContext = undefined;
-    this.resetWaveform();
+    if (!preserveLevels) {
+      this.resetWaveform();
+    }
   }
 
   private resetWaveform(): void {
